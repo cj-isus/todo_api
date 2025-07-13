@@ -1,18 +1,9 @@
-﻿version: '3.8'
-services:
-  app:
-    build: .
-    ports:
-      - "8000:8000"
-    env_file:
-      - .env
-    depends_on:
-      - db
+﻿services:
   db:
-    image: postgres:16
+    image: postgres:17
     environment:
       POSTGRES_USER: todo_user
-      POSTGRES_PASSWORD: your_secure_password
+      POSTGRES_PASSWORD: 12345
       POSTGRES_DB: todo_db
     ports:
       - "5432:5432"
